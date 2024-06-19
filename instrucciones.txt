@@ -1,0 +1,63 @@
+MÁSTER: MACHINE LEARNING Y CIENCIA DE DATOS CON PYTHON Y R
+Trabajo Fin de Máster (TFM)
+
+El objetivo de este TFM es que puedas revisar y poner en práctica todo lo que has ido aprendiendo a lo largo del máster. Aplicaremos tus conocimientos a un caso práctico concreto, que está especialmente preparado y retocado para que debas enfrentarte a ciertos casos realistas de uso de los datos, de modo que puedas aplicar todo lo aprendido en la formación y demuestres que has adquirido los conocimientos apropiados.
+
+Para llevar a cabo el TFM se puede usar indistintamente R, Python o incluso una combinación de ambos. El informe a entregar se generará mediante un notebook de R o Jupyter que contendrá tanto el código necesario para reproducir cada paso como tus razonamientos (en el Markdown).
+
+Introduce el archivo o archivos de tu solución en un fichero comprimido (ZIP, 7-Zip o RAR y adjúntalo junto a tu mensaje).
+
+Contenido del trabajo
+El informe deberá cubrir, al menos, los siguientes aspectos, que deben estar adecuadamente indicados y organizados:
+
+Carga del conjunto de datos.
+Sesión de análisis exploratorio usando estadísticos y técnicas de visualización para familiarizarse con las características del conjunto de datos e identificar los problemas que presente.
+Preprocesamiento aplicando las operaciones de limpieza que se consideren necesarias y que deberán estar razonadas en el informe.
+Entrenamiento de los modelos que se concretan a continuación, usando el particionamiento de datos que se considere adecuado y que deberá estar razonado en el informe.
+Evaluación del rendimiento de los modelos con datos de test, usando para ello las métricas que se consideren adecuadas y que deberán estar razonadas en el informe.
+Análisis comparativo en el que, mediante tablas y/o gráficas se comparen los resultados de los distintos modelos y se llegue a una conclusión sobre cuál sería el más adecuado para el problema planteado.
+Conjuntos de datos
+Tendrás que escoger solo un proyecto de entre las dos opciones que se exponen a continuación. A la hora de decidir, ten en cuenta que la primera opción implica un conjunto de datos más grande (más instancias y más variables) pero una tarea más simple: la clasificación binaria. El segundo es más pequeño en tamaño pero la tarea a resolver es de clasificación multiclase. Ambos ofrecen diversos retos, por lo que cualquiera servirá para aplicar lo aprendido.
+
+OPCIÓN 1: Predicción de la calidad del crédito
+El conjunto de datos a utilizar es "Credit-G", se proporciona en un archivo con formato CSV asociado a este trabajo.
+MUY IMPORTANTE: descárgate el archivo creditg.zip adjunto al final de este enunciado, no el conjunto de datos "Credit-G" convencional que puedes encontrar por ahí. Este archivo es diferente y contiene modificaciones propias que hemos realizado para poder evaluar mejor este trabajo.
+
+Descripción: Base de datos de predicción de la fiabilidad económica de un cliente a la hora de conceder un préstamo. Tiene 1000 instancias y 21 variables descriptivas que son indicadores del estado económico de la persona. La mayoría de los atributos son nominales. La última variable, la vigésimo primera, indica la clase (good o bad).
+
+Información sobre las variables:
+
+Identificador de la cuenta de cliente (3 letras)
+Estado de la cuenta corriente en marcos alemanes
+Duración en meses
+Historial de préstamos (si se han solicitado, se han pagado adecuadamente, retrasos, cuentas críticas)
+Propósito del préstamo (coche, televisión,...)
+Cuantía del préstamo
+Estado de las cuentas de ahorros en marcos alemanes
+Empleo actual en años
+Tasa de interés en porcentaje de ingresos disponibles
+Estado personal (casado, soltero y sexo)
+Otros implicados / avales
+Residencia actual desde X años
+Propiedades (p.ej. inmuebles)
+Edad en años
+Otros planes de pago a plazos
+Vivienda (alquiler, propia...)
+Número de préstamos existentes en este banco
+Trabajo
+Número de personas dependientes (el cliente las mantiene)
+Teléfono (sí, no
+Trabajador extranjero (sí, no)
+Fiabilidad del cliente (good indica riesgo bajo y bad riesgo alto)
+Puntos extra: Considera que el error cometido al clasificar un cliente malo como bueno es más grave que el cometido al clasificar uno bueno como malo. Trata de ajustar los pesos (o el umbral de clasificación de algún clasificador para que cometa menos errores de tipo "Falso Positivo" (clasificar un cliente malo como bueno).
+
+Métodos de aprendizaje
+Nota: para abordar esta parte del trabajo será conveniente que hayas estudiado hasta la primera lección del último módulo del máster: "Uso de múltiples modelos para mejorar los resultados".
+
+Para el apartado 4 y posteriores necesitarás utilizar varios algoritmos de aprendizaje. Se propone aplicar el siguiente flujo de trabajo:
+
+Entrenar y validar un método de ensamblaje homogéneo como Random Forest o Gradient Boosting (los puedes encontrar tanto en el paquete caret de R como en el módulo sklearn.ensemble en Python.
+Tomando esos resultados como objetivo, entrenar y validar un modelo de tipo kNN tratando de alcanzar las métricas del ensemble ajustando el parámetro k.
+De la misma forma, entrenar y validar una red neuronal compuesta de 3 capas (una de entrada, una capa densa oculta y una capa densa de salida, intentando ajustar el número de neuronas en la capa oculta y otros hiperparámetros para acercarse al ensemble. Para entrenar una red neuronal en R, puedes utilizar el method="mlp" de caret.
+Ficheros a entregar
+Se pide entregar el cuaderno de Jupyter o R donde se haya realizado el desarrollo del trabajo. Es importante que cada sección de código incluya previamente una celda/sección de texto explicando el objetivo de esa parte. Asimismo, se debe exportar a un archivo HTML o PDF para asegurar que los resultados de cada celda de código son visibles. Ambos archivos se comprimirán y se subirán a la plataforma.
